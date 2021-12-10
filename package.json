@@ -1,0 +1,22 @@
+{
+  "name": "curriculum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victor-luna/curriculum.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victor-luna/curriculum/issues"
+  },
+  "homepage": "https://github.com/victor-luna/curriculum#readme",
+  "dependencies": {
+    "parse": "^3.4.0"
+  }
+}

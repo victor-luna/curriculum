@@ -6,8 +6,6 @@
     <meta http-equiv="content-type" content="text/html;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
-
-
     <!-- CSS -->
     <link rel="stylesheet" href="/style.css">
 
@@ -16,42 +14,6 @@
 </head>
 
 <body>
-
-
-    <script>
-        Parse.initialize("rnjhD3rvQ3lOiDIhaJPAHCh9r5eNDGCvz8Fvtxh2", "5KDBR6C9RxhbCsuYzlObQDQAYZBXflp688ElKRn4"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
-        Parse.serverURL = 'https://parseapi.back4app.com/'
-
-        //Saving your First Data Object on Back4App
-        async function saveNewPerson() {
-            const person = new Parse.Object("Person");
-
-            person.set("name", "Victor Luna");
-            person.set("age", 30);
-            try {
-                let result = await person.save()
-                alert('New object created with objectId: ' + result.id);
-            } catch (error) {
-                alert('Failed to create new object, with error code: ' + error.message);
-            }
-        }
-
-        //Reading your First Data Object from Back4App
-        async function retrievePerson() {
-            const query = new Parse.Query("Person");
-
-            try {
-                const person = await query.get("mhPFDlCahj");
-                const name = person.get("name");
-                const age = person.get("age");
-
-                alert(`Name: ${name} age: ${age}`);
-            } catch (error) {
-                alert(`Failed to retrieve the object, with error code: ${error.message}`);
-            }
-        }
-
-    </script>
     <!--jQuery, Popper.js, Bootstrap JS-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -76,9 +38,9 @@
                 <div id="cabecalho">
                     <h1 class="meuNome">Victor Luiz Vaz Guimarães Luna</h1>
                     <p class="dados">Brasileiro, 30 anos, 12/06/1991</p>
-                    <p class="dados">Rua Nome da Minha Rua, 62</p>
+                    <p class="dados d1">Rua Nome da Minha Rua, 62</p>
                     <p class="dados">Recife, Pernambuco, Brasil</p>
-                    <p class="dados">(81) 98765-4321</p>
+                    <p class="dados d2">(81) 98765-4321</p>
                     <p class="dados">victor.vazguimaraes@gmail.com</p>
 
                     <a href="/curriculum.pdf" download="curriculum">
@@ -150,9 +112,9 @@
                 <div class="card-body">
                     <p class="card-text">
                     <ul class="tecnologias">
-                        <li class="items">HTML</li>
-                        <li class="items">CSS</li>
-                        <li class="items">Javascript</li>
+                        <li class="items d3">HTML</li>
+                        <li class="items d4">CSS</li>
+                        <li class="items d5">Javascript</li>
                         <li class="items">jQuery</li>
                         <li class="items">SASS</li>
                     </ul>
