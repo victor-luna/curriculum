@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="content-type" content="text/html;">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+
 
     <!-- CSS -->
     <link rel="stylesheet" href="/style.css">
@@ -15,6 +17,41 @@
 
 <body>
 
+
+    <script>
+        Parse.initialize("rnjhD3rvQ3lOiDIhaJPAHCh9r5eNDGCvz8Fvtxh2", "5KDBR6C9RxhbCsuYzlObQDQAYZBXflp688ElKRn4"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+        Parse.serverURL = 'https://parseapi.back4app.com/'
+
+        //Saving your First Data Object on Back4App
+        async function saveNewPerson() {
+            const person = new Parse.Object("Person");
+
+            person.set("name", "Victor Luna");
+            person.set("age", 30);
+            try {
+                let result = await person.save()
+                alert('New object created with objectId: ' + result.id);
+            } catch (error) {
+                alert('Failed to create new object, with error code: ' + error.message);
+            }
+        }
+
+        //Reading your First Data Object from Back4App
+        async function retrievePerson() {
+            const query = new Parse.Query("Person");
+
+            try {
+                const person = await query.get("mhPFDlCahj");
+                const name = person.get("name");
+                const age = person.get("age");
+
+                alert(`Name: ${name} age: ${age}`);
+            } catch (error) {
+                alert(`Failed to retrieve the object, with error code: ${error.message}`);
+            }
+        }
+
+    </script>
     <!--jQuery, Popper.js, Bootstrap JS-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
